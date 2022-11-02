@@ -14,7 +14,7 @@ jobs:
           echo "PUBLIC_IP=${PUBLIC_IP_ADDRESS}" 
       - uses: actions/checkout@v3
       - id: foo
-        uses: petroill/test/.github/actions/test/
+        uses: petroill/test/.github/actions/test@main
         with:
           who-to-greet: ${name}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}

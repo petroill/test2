@@ -1,0 +1,21 @@
+on: [push]
+env:
+  greeting: "Hello"
+  name: "Dan"
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - run: |
+          export PUBLIC_IP_ADDRESS=$(curl --silent https://api.ipify.org)
+          echo "PUBLIC_IP_ADDRESS=${PUBLIC_IP_ADDRESS}" >> $GITHUB_ENV
+          echo "PUBLIC_IP=${PUBLIC_IP_ADDRESS}" 
+      - uses: actions/checkout@v3
+      - id: foo
+        uses: petroill/test/.github/actions/test/
+        with:
+          who-to-greet: ${name}
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash

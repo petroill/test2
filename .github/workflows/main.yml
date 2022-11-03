@@ -15,6 +15,7 @@ jobs:
           export PUBLIC_IP_ADDRESS=$(curl --silent https://api.ipify.org)
           echo "PUBLIC_IP_ADDRESS=${PUBLIC_IP_ADDRESS}" >> $GITHUB_ENV
           echo "PUBLIC_IP=${PUBLIC_IP_ADDRESS}" 
+          echo $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
       - id: foo
         uses: petroill/test/.github/actions/test@main

@@ -17,8 +17,6 @@ jobs:
           echo "PUBLIC_IP=${PUBLIC_IP_ADDRESS}" 
           echo $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
-        with:
-          path: main
       - uses: actions/checkout@v3
         with:
           repository: petroill/test

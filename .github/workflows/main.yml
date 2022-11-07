@@ -23,7 +23,7 @@ jobs:
           ref: branch
           path: test      
       - id: foo
-        uses: petroill/test/.github/actions/test@main
+        uses: petroill/test/.github/actions/test@branch
         with:
           who-to-greet: 'Testing'
           # who-to-greet: ${name}

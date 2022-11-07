@@ -25,6 +25,7 @@ jobs:
       - id: foo
         uses: petroill/test/.github/actions/test@main
         with:
-          who-to-greet: ${name}
+          who-to-greet: 'Testing'
+          # who-to-greet: ${name}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash

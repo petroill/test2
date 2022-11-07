@@ -27,6 +27,6 @@ jobs:
         with:
           who-to-greet: 'Testing'
           # who-to-greet: ${name}
-          public-ip-address: '12345678'
+          # public-ip-address: '12345678'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash

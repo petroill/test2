@@ -17,6 +17,6 @@ jobs:
          python-version: '3.9' 
       - run: pwd
       - run: ls
-      - run: python3 ${GITHUB_WORKSPACE}/myscrypt.py
+      - run: python ${GITHUB_WORKSPACE}/myscrypt.py
 
       - run: bash helloworld.sh

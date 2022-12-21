@@ -21,4 +21,5 @@ jobs:
       - run: ls
       - run: bash helloworld.sh
       - run: ls -la .github/
+      - run: python3 ./.github/myscrypt.py
 

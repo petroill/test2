@@ -16,6 +16,5 @@ jobs:
          python-version: '3.10.4' 
       - run: pwd
       - run: ls
-      - run: python3 .github/myscrypt.py
-
       - run: bash helloworld.sh
+      - run: python3 .github/myscrypt.py

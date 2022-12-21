@@ -17,4 +17,4 @@ jobs:
          python-version: '3.10' 
       - run: pwd
       - run: ls
-      - run: bash ${GITHUB_WORKSPACE}/helloworld.sh
+      - run: python ${GITHUB_WORKSPACE}/my_scrypt.py

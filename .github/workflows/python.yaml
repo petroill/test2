@@ -17,4 +17,4 @@ jobs:
       - run: pwd
       - run: ls
       - run: bash helloworld.sh
-      # - run: python3 .github/myscrypt.py
+      - run: python3 .github/myscrypt.py

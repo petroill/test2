@@ -11,20 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - run: |
-          export PUBLIC_IP_ADDRESS=$(curl --silent https://api.ipify.org)
-          echo "PUBLIC_IP_ADDRESS=${PUBLIC_IP_ADDRESS}" >> $GITHUB_ENV
-          echo "PUBLIC_IP=${PUBLIC_IP_ADDRESS}" 
-          echo $GITHUB_WORKSPACE
-      - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
-        with:
-          repository: petroill/test
-          ref: branch
-          path: test      
+      # - run: |
+      #     export PUBLIC_IP_ADDRESS=$(curl --silent https://api.ipify.org)
+      #     echo "PUBLIC_IP_ADDRESS=${PUBLIC_IP_ADDRESS}" >> $GITHUB_ENV
+      #     echo "PUBLIC_IP=${PUBLIC_IP_ADDRESS}" 
+      #     echo $GITHUB_WORKSPACE
+      - uses: actions/checkout@v3   
       - id: foo
-        uses: petroill/test/.github/actions/test@main
+        uses: petroill/test/.github/actions/test@branch
         with:
-          who-to-greet: ${name}
+          who-to-greet: 'Testing'
+          # who-to-greet: ${name}
+          public-ip-address: '1.1.1.1'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
